@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- LocalAPI logo: the single source for the app icon, in-app logo and favicon.
+       Full-bleed square with no transparent margin: macOS applies its own rounded mask. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a1f23"/><stop offset="1" stop-color="#0b0e10"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7651F2"/><stop offset="1" stop-color="#50CCF9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <path d="M392 322 L222 512 L392 702" fill="none" stroke="url(#accent)" stroke-width="72" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M632 322 L802 512 L632 702" fill="none" stroke="url(#accent)" stroke-width="72" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="512" cy="512" r="64" fill="#7651F2"/>
+</svg>

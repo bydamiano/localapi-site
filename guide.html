@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guide · LocalAPI</title>
+  <meta name="description" content="How to use LocalAPI step by step: import collections, add tokens once per API, send requests, read responses, variables and sharing.">
+  <link rel="canonical" href="https://bydamiano.github.io/localapi-site/guide.html">
+  <meta property="og:title" content="LocalAPI guide">
+  <meta property="og:image" content="https://bydamiano.github.io/localapi-site/assets/og.png">
+  <meta name="theme-color" content="#0d1013">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="LocalAPI home"><img src="assets/logo.svg" alt="" width="30" height="30"><span>Local<span class="api">API</span></span></a>
+      <nav class="nav-links" aria-label="Main">
+        <a class="hide-sm" href="./#features">Features</a>
+        <a href="guide.html" aria-current="page">Guide</a>
+        <a class="hide-sm" href="privacy.html">Privacy</a>
+        <a class="btn primary small" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <h1>The <span class="accent">guide</span></h1>
+        <p>Everything you need, step by step. The same guide is inside the app: click <b>Guide</b> at the bottom of the menu.</p>
+      </div>
+
+      <div class="guide">
+        <details open>
+          <summary><span class="i" aria-hidden="true">👋</span><span class="t">What LocalAPI is</span></summary>
+          <div class="body">
+            <p>LocalAPI is a simple client for calling APIs, like Postman, that runs and saves everything on your own Mac. No account, no cloud.</p>
+            <ul>
+              <li>Your collections, tokens and history stay in <code>~/Library/Application Support/LocalAPI/data</code>.</li>
+              <li>Requests go straight from your Mac to the API.</li>
+              <li>Changes save automatically: there is no Save button.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="i" aria-hidden="true">📥</span><span class="t">Import a collection</span></summary>
+          <div class="body">
+            <ol>
+              <li>Click <b>Import JSON file</b> at the bottom of the menu.</li>
+              <li>Drop the .json file a teammate shared with you, or a Postman collection (v2.1) or environment export.</li>
+              <li>Folders, requests, headers and bodies come in ready to use.</li>
+            </ol>
+            <p class="hint">Importing a collection with the same name again replaces it. Your tokens are kept.</p>
+          
+            <img class="guide-img" src="assets/guide/guide-import.png" alt="The Import JSON file window with its drop zone" width="1600" height="1000" loading="lazy">
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="i" aria-hidden="true">🔑</span><span class="t">Add your tokens (once per API)</span></summary>
+          <div class="body">
+            <p>A token belongs to an API address (like <code>https://api.example.com</code>), not to a single request. Add it once and every GET, POST, PUT, PATCH and DELETE to that address uses it.</p>
+            <ol>
+              <li>Open a request: the bar under the URL shows the API and whether it has a token.</li>
+              <li>Click <b>Add token</b> and paste it. "Bearer " in front is fine, it is removed for you.</li>
+              <li>Or open <b>APIs &amp; tokens</b> in the menu to manage all of them.</li>
+            </ol>
+            <ul>
+              <li><b>★ Favorites</b> always show in APIs &amp; tokens. Click the star to add or remove an API from the list; its token stays saved.</li>
+              <li><b>+ Add API</b> picks another API from your collections, or any address.</li>
+              <li>Besides bearer tokens you can use an API key (header or query), username &amp; password, or a custom Authorization header.</li>
+              <li><b>Skip for this request</b> sends one request without the token.</li>
+            </ul>
+          
+            <img class="guide-img" src="assets/guide/guide-token.png" alt="The token editor open under the URL" width="1600" height="1000" loading="lazy">
+            <img class="guide-img" src="assets/guide/screenshot-apis.png" alt="APIs and tokens with favorite APIs" width="1600" height="1000" loading="lazy">
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="i" aria-hidden="true">🚀</span><span class="t">Send a request</span></summary>
+          <div class="body">
+            <ol>
+              <li>Pick a request in the menu, or create one with ⋯ › New request on a collection or folder.</li>
+              <li>Choose the method and edit the URL.</li>
+              <li><b>Params</b>: query parameters and path variables (the <code>:id</code> parts of the URL).</li>
+              <li><b>Headers</b>: extra headers. Authorization comes from your token automatically.</li>
+              <li><b>Body</b>: JSON (starts with <code>{ }</code>, with Beautify), text, form data with files, or URL-encoded.</li>
+              <li>Press <b>Send</b> or <kbd>⌘ Enter</kbd>.</li>
+            </ol>
+            <p class="hint">A red note under the URL means something needs fixing first, like an empty path variable.</p>
+          
+            <img class="guide-img" src="assets/guide/guide-request.png" alt="A request with its Params tab: query parameters and path variables" width="1600" height="1000" loading="lazy">
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="i" aria-hidden="true">📄</span><span class="t">Read the response</span></summary>
+          <div class="body">
+            <ul>
+              <li>Status, time and size are shown on top.</li>
+              <li>JSON is formatted and colored; PDFs and images preview right there.</li>
+              <li><b>Headers</b> shows the response headers.</li>
+              <li><b>Copy</b> copies the body; <b>Save file</b> downloads it (for example a generated PDF).</li>
+              <li>Drag the small bar between the request and the response to resize them.</li>
+            </ul>
+          
+            <img class="guide-img" src="assets/guide/screenshot-main.png" alt="A 201 Created response with formatted JSON" width="1600" height="1000" loading="lazy">
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="i" aria-hidden="true">🗂️</span><span class="t">Organize collections</span></summary>
+          <div class="body">
+            <ul>
+              <li><b>+</b> in the header creates a new collection.</li>
+              <li><b>⋯</b> next to a collection, folder or request: new request, new folder, rename, duplicate, delete, export.</li>
+              <li>Click a collection's icon (📦) to choose any emoji for it.</li>
+              <li>Search all requests with <kbd>⌘ K</kbd>. Hover a cut-off name to see it in full.</li>
+              <li>Open requests become tabs; with many tabs use the ‹ › arrows.</li>
+              <li><b>Duplicate</b> and <b>Copy as cURL</b> are at the top of every request.</li>
+            </ul>
+          
+            <img class="guide-img" src="assets/guide/guide-emoji.png" alt="The emoji picker for a collection icon" width="1600" height="1000" loading="lazy">
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="i" aria-hidden="true">{ }</span><span class="t">Variables</span></summary>
+          <div class="body">
+            <p>Write <code>{{name}}</code> in a URL, header or body and LocalAPI fills in the value when sending.</p>
+            <ul>
+              <li>Open <b>Variables</b> in the menu to edit them.</li>
+              <li><b>Collection variables</b> belong to one collection and win over <b>globals</b>, which apply everywhere.</li>
+              <li>Unknown variables are flagged in red under the URL.</li>
+            </ul>
+          
+            <img class="guide-img" src="assets/guide/guide-variables.png" alt="The Variables window" width="1600" height="1000" loading="lazy">
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="i" aria-hidden="true">🤝</span><span class="t">Share with your team</span></summary>
+          <div class="body">
+            <ol>
+              <li>Click <b>Export JSON file</b> and pick the collection (or one folder).</li>
+              <li>Send the file to your teammates.</li>
+              <li>They use <b>Import JSON file</b> and add their own tokens.</li>
+            </ol>
+            <p class="hint">Exports never contain tokens, and variables named like secrets are left empty. The collection icon and the favorite APIs are included.</p>
+          
+            <img class="guide-img" src="assets/guide/guide-export.png" alt="The Export JSON file window" width="1600" height="1000" loading="lazy">
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="i" aria-hidden="true">🕘</span><span class="t">History</span></summary>
+          <div class="body"><p>History lists the last 200 requests you sent with their status and time. Click one to open that request again.</p>
+            <img class="guide-img" src="assets/guide/guide-history.png" alt="The History window" width="1600" height="1000" loading="lazy">
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="i" aria-hidden="true">🪟</span><span class="t">Window, menu and theme</span></summary>
+          <div class="body">
+            <ul>
+              <li>Drag the window by an empty part of the header; double-click it to maximize.</li>
+              <li>Everything scales with the window size: make it as big or small as you like.</li>
+              <li>Hover the line between the menu and the page to show the ⇄ button: it switches the menu between icons + text and icons only.</li>
+              <li>◐ in the header switches between dark and light.</li>
+            </ul>
+          
+            <img class="guide-img" src="assets/guide/guide-rail.png" alt="The menu collapsed to icons only" width="1600" height="1000" loading="lazy">
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="i" aria-hidden="true">🔒</span><span class="t">Your data and privacy</span></summary>
+          <div class="body">
+            <ul>
+              <li>Nothing is sent anywhere except the requests you make.</li>
+              <li>To back up, copy <code>~/Library/Application Support/LocalAPI/data</code>. To reset the app, delete that folder.</li>
+              <li><code>apis.json</code> in that folder holds your tokens: never share it.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© <span data-year>2026</span> bydamiano · LocalAPI</span>
+      <nav aria-label="Footer">
+        <a href="./">Home</a>
+        <a href="download.html">Download</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://github.com/bydamiano/localapi-site/releases">Releases</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="site.js" defer></script>
+</body>
+</html>

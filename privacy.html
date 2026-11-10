@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy · LocalAPI</title>
+  <meta name="description" content="LocalAPI keeps everything on your Mac: no account, no analytics, no servers.">
+  <link rel="canonical" href="https://bydamiano.github.io/localapi-site/privacy.html">
+  <meta name="theme-color" content="#0d1013">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="LocalAPI home"><img src="assets/logo.svg" alt="" width="30" height="30"><span>Local<span class="api">API</span></span></a>
+      <nav class="nav-links" aria-label="Main">
+        <a class="hide-sm" href="./#features">Features</a>
+        <a href="guide.html">Guide</a>
+        <a class="hide-sm" href="privacy.html" aria-current="page">Privacy</a>
+        <a class="btn primary small" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="sec">
+    <article class="wrap prose">
+      <h1>Privacy</h1>
+      <p class="lead" style="margin:0">Short version: LocalAPI has no account, no analytics and no servers. Your data stays on your Mac.</p>
+
+      <h2>The app</h2>
+      <ul>
+        <li><b>Your data is local.</b> Collections, requests, variables, history and API tokens are saved only on your Mac, in <code>~/Library/Application Support/LocalAPI/data</code>.</li>
+        <li><b>Requests go straight to your APIs.</b> When you press Send, the request goes from your Mac to the API you chose. It never passes through any server of ours.</li>
+        <li><b>No tracking.</b> The app collects no analytics, usage statistics or crash reports, and has no account or sign-in. Its fonts and everything else it needs are inside the app, so it works offline too.</li>
+        <li><b>Sharing is your choice.</b> "Export JSON file" creates a file you decide to send. It never contains tokens.</li>
+        <li><b>Deleting your data</b> is as simple as deleting the folder above, or the app itself.</li>
+      </ul>
+
+      <h2>This website</h2>
+      <ul>
+        <li>It is a static site hosted on GitHub Pages, and the downloads are served from GitHub Releases. GitHub may keep technical logs such as IP addresses, under the <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>.</li>
+        <li>The download page asks GitHub's public API for the latest version.</li>
+        <li>Fonts are served from this site; no third-party font or analytics services are used.</li>
+        <li>There are no cookies, analytics or trackers of ours.</li>
+      </ul>
+
+      <p class="meta">Last updated: November 2026.</p>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© <span data-year>2026</span> bydamiano · LocalAPI</span>
+      <nav aria-label="Footer">
+        <a href="./">Home</a>
+        <a href="download.html">Download</a>
+        <a href="guide.html">Guide</a>
+        <a href="https://github.com/bydamiano/localapi-site/releases">Releases</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="site.js" defer></script>
+</body>
+</html>

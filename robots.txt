@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bydamiano.github.io/localapi-site/sitemap.xml
